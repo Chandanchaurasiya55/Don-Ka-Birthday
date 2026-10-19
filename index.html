@@ -56,8 +56,8 @@ button:focus-visible{outline:3px solid #ffb3c1;outline-offset:2px}
 .opt b{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:12px;color:var(--red);flex:none}
 .opt:hover{background:#ffe0e8}.opt.pick{background:var(--red);color:#fff}.opt.pick b{color:var(--red)}
 .react{min-height:48px;font-family:var(--hand);font-size:24px;color:var(--red);margin:6px 0 0}
-.note{position:absolute;right:-4px;top:-14px;background:#ffd6df;font-family:var(--hand);font-size:17px;padding:6px 10px;transform:rotate(5deg);box-shadow:0 4px 10px #0002;max-width:130px;line-height:1.1;transition:opacity .4s;z-index:3}
-.note.hide{opacity:0;pointer-events:none}
+.note{display:inline-block;background:#ffd6df;font-family:var(--hand);font-size:17px;padding:8px 14px;transform:rotate(2deg);box-shadow:0 4px 10px #0002;line-height:1.2;margin:0 0 10px;border-radius:2px;transition:opacity .4s}
+.note.hide{opacity:0;height:0;margin:0;padding:0;overflow:hidden}
 @media(min-width:700px){.quiz{grid-template-columns:240px 1fr}}
 /* carousel */
 .car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 8vw 14px;scrollbar-width:none;margin:0 -18px}
@@ -116,8 +116,9 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:20}
 <!-- LEVEL 2 -->
 <section class="lvl" id="l2">
   <p class="tag">Level 2</p><h2>Don Bhai Challenge 😂</h2><p class="sub">Thoda dimag lagao, thoda yaadein yaad karo...</p>
+  <div class="note">Sahi jawab par next level unlock hoga! 😜</div>
   <div class="quiz"><div class="pic" id="qpic"></div>
-   <div class="qc" style="position:relative;margin-left: 20px;margin-top: 20px;"><div class="note">Sahi jawab par next level unlock hoga! 😜</div>
+   <div class="qc">
     <h3 id="qq"></h3><div id="qo"></div><p class="react" id="qr"></p></div></div>
   <button class="btn" id="qn" disabled>Agla sawaal ➜</button>
 </section>
