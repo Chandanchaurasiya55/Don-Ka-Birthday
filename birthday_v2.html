@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Don 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#fff4ef;--bg2:#ffdfe8;--red:#d6293e;--rose:#ff7a93;--ink:#3a2330;--mut:#8a6b78;--card:#fff;
+--hand:'Caveat','Segoe Script','Bradley Hand',cursive;--sans:'Poppins',system-ui,sans-serif;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);min-height:100vh;
+background:radial-gradient(circle at 10% 0%,#fff 0,transparent 40%),linear-gradient(160deg,var(--bg1),var(--bg2));
+padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);overflow-x:hidden}
+.deco{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.deco span{position:absolute;font-size:22px;opacity:.55;animation:fl 7s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px) rotate(8deg)}}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(255,244,239,.85);backdrop-filter:blur(8px)}
+.back{border:0;background:#fff;width:34px;height:34px;border-radius:50%;box-shadow:0 2px 8px #0002;cursor:pointer;font-size:16px;color:var(--red)}
+.steps{display:flex;align-items:center;flex:1;justify-content:center;gap:0}
+.dot{width:26px;height:26px;border-radius:50%;background:#e9dde1;color:var(--mut);display:grid;place-items:center;font-size:12px;font-weight:600;flex:none;transition:.3s}
+.dot.done{background:#cdbcc3;color:#fff}.dot.on{background:var(--red);color:#fff;transform:scale(1.15)}
+.ln{width:clamp(8px,4vw,26px);height:2px;background:#e3d3d9;flex:none}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:6px 18px 50px}
+.lvl{display:none;text-align:center}.lvl.on{display:block;animation:in .55s ease}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.tag{color:var(--red);font-weight:600;font-size:14px;margin:6px 0 0}
+h2{font-size:clamp(26px,7vw,36px);margin:2px 0 4px;font-weight:700}
+.sub{color:var(--mut);font-size:14px;margin:0 0 20px}
+.hand{font-family:var(--hand);font-weight:700}
+.btn{font:600 15px var(--sans);background:var(--red);color:#fff;border:0;border-radius:30px;padding:13px 30px;box-shadow:0 6px 16px #d6293e55;cursor:pointer;margin-top:22px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}.btn:disabled{background:#d9c7ce;box-shadow:none;cursor:not-allowed}
+button:focus-visible{outline:3px solid #ffb3c1;outline-offset:2px}
+/* photos */
+.ph{width:100%;height:100%;object-fit:cover;display:block}
+.empty{width:100%;height:100%;min-height:90px;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mut);background:repeating-linear-gradient(45deg,#fff7f8,#fff7f8 8px,#ffeef2 8px,#ffeef2 16px);border:2px dashed #e7b8c3;border-radius:6px;padding:6px}
+.pol{background:#fff;padding:9px 9px 8px;box-shadow:0 8px 20px #8a3b5a33;border-radius:3px;position:relative;transform:rotate(var(--r,0deg))}
+.pol::before{content:"";position:absolute;top:-10px;left:50%;width:56px;height:18px;margin-left:-28px;background:#ffe1a8aa;transform:rotate(-3deg)}
+.pol .im{aspect-ratio:4/5;overflow:hidden;background:#fff}
+.pol p{margin:6px 2px 0;font-family:var(--hand);font-size:19px;line-height:1.1;color:var(--ink)}
+.polrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:22px 16px;padding:14px 4px}
+.polrow .pol:nth-child(odd){--r:-3deg}.polrow .pol:nth-child(even){--r:2.5deg;margin-top:14px}
+/* hero */
+#l0{padding-top:10px}
+.hero{position:relative;display:grid;gap:10px}
+.hero .pic{border-radius:22px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 14px 34px #8a3b5a44;border:6px solid #fff;max-height:62vh;margin:0 auto;width:min(100%,430px)}
+.hero h1{font-family:var(--hand);font-size:clamp(40px,12vw,64px);line-height:1;margin:14px 0 0;color:var(--ink);transform:rotate(-3deg)}
+.hero h1 i{display:block;width:70%;height:5px;background:var(--rose);border-radius:9px;margin:6px auto 0;transform:rotate(-1deg)}
+.hero .small{font-family:var(--hand);font-size:28px;line-height:1.1;margin:10px 0 0}
+.crown{position:absolute;top:-8px;right:6px;font-family:var(--hand);font-size:26px;transform:rotate(8deg);color:var(--ink)}
+@media(min-width:700px){.hero{grid-template-columns:1fr 1fr;align-items:center;text-align:left}.hero .txt{order:-1}.hero h1{transform:rotate(-4deg)}.hero h1 i{margin-left:0}.hero .pic{max-height:none}}
+/* quiz */
+.quiz{display:grid;gap:18px;align-items:center;margin-top:6px}
+.quiz .pic{width:min(70%,260px);aspect-ratio:3/4;margin:0 auto;border-radius:16px;overflow:hidden;border:5px solid #fff;box-shadow:0 10px 26px #8a3b5a44;transform:rotate(-2deg)}
+.qc{background:#fff;border-radius:20px;padding:18px;box-shadow:0 10px 26px #8a3b5a22;text-align:left}
+.qc h3{margin:0 0 12px;font-size:16px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;border:0;background:#fbeff2;border-radius:30px;padding:10px 14px;margin:8px 0;font:500 14px var(--sans);cursor:pointer;text-align:left;color:var(--ink);transition:.2s}
+.opt b{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:12px;color:var(--red);flex:none}
+.opt:hover{background:#ffe0e8}.opt.pick{background:var(--red);color:#fff}.opt.pick b{color:var(--red)}
+.react{min-height:48px;font-family:var(--hand);font-size:24px;color:var(--red);margin:6px 0 0}
+.note{position:absolute;right:-4px;top:-14px;background:#ffd6df;font-family:var(--hand);font-size:17px;padding:6px 10px;transform:rotate(5deg);box-shadow:0 4px 10px #0002;max-width:130px;line-height:1.1}
+@media(min-width:700px){.quiz{grid-template-columns:240px 1fr}}
+/* carousel */
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 8vw 14px;scrollbar-width:none;margin:0 -18px}
+.car::-webkit-scrollbar{display:none}.car .pol{flex:0 0 64%;max-width:260px;scroll-snap-align:center}
+.cw{position:relative}.ar{position:absolute;top:42%;width:38px;height:38px;border-radius:50%;border:0;background:#fff;box-shadow:0 3px 10px #0003;color:var(--red);font-size:18px;cursor:pointer;z-index:2}
+.ar.l{left:-6px}.ar.r{right:-6px}
+.dots{display:flex;gap:6px;justify-content:center}.dots i{width:7px;height:7px;border-radius:50%;background:#e3c6cf;transition:.3s}.dots i.on{background:var(--red);width:18px;border-radius:9px}
+/* reasons */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.rc{border:0;background:#fff;border-radius:16px;padding:12px 8px;min-height:84px;box-shadow:0 5px 14px #8a3b5a1f;font:500 13px/1.3 var(--sans);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.25s}
+.rc .e{font-size:28px}.rc.open{background:linear-gradient(135deg,#fff,#ffe5ec);transform:rotate(-1deg)}
+.cnt{font-weight:600;color:var(--red);margin:0 0 12px}
+/* video */
+.vid{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:#2b1a22;box-shadow:0 12px 30px #8a3b5a55;border:5px solid #fff}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid .empty{background:#3a2330;border-color:#6b4655;color:#d9b9c5;border-radius:0;border-width:0}
+.play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;border:0;background:#fffe;color:#111;font-size:24px;cursor:pointer;box-shadow:0 6px 18px #0006}
+.jf{position:absolute;right:14px;bottom:10px;font-family:var(--hand);font-size:26px;color:#fff}
+/* gift */
+#l6{padding-top:16px}
+.gift{font-size:110px;background:none;border:0;cursor:pointer;animation:bn 1.6s ease-in-out infinite;filter:drop-shadow(0 10px 14px #d6293e44)}
+@keyframes bn{50%{transform:translateY(-14px) rotate(4deg)}}
+#reveal{display:none}#reveal.on{display:block;animation:in .8s}
+.hb{font-family:var(--hand);font-size:clamp(54px,17vw,96px);line-height:.95;color:var(--red);margin:0;transform:rotate(-4deg)}
+.hb small{display:block;font-size:.55em;color:var(--ink)}
+.age{display:inline-block;background:#fff;border:3px dashed var(--rose);border-radius:20px;padding:4px 22px;font-family:var(--hand);font-size:34px;margin:14px 0 6px}
+.msg{max-width:480px;margin:10px auto;color:var(--ink);font-size:15px;line-height:1.7}
+.main-pic{width:min(86%,340px);aspect-ratio:1;margin:18px auto 6px;--r:-2deg}
+.wishes{display:grid;gap:12px;text-align:left;margin:22px 0}
+.w{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 6px 16px #8a3b5a22;border-left:6px solid var(--rose);font-size:14px}
+.w b{display:block;font-family:var(--hand);font-size:24px;color:var(--red)}
+.from{font-family:var(--hand);font-size:28px;margin-top:6px}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:20}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+
+<div class="deco" id="deco"></div>
+<div class="top"><button class="back" id="back" aria-label="Back">←</button><div class="steps" id="steps"></div><span style="width:34px"></span></div>
+
+<main>
+<!-- START -->
+<section class="lvl on" id="l0"><div class="hero">
+  <div class="pic" id="hero"></div><div class="crown">Birthday Girl ♡</div>
+  <div class="txt"><h1>Areee Don Bhai,<br>Kaya haal hai?<br>Kaese ho? 💗<i></i></h1>
+  <p class="small">Wo chhoro...<br>Ander aawo ✨</p>
+  <button class="btn" data-go="1">Maja Aayegaa ➜</button></div>
+</div></section>
+
+<!-- LEVEL 1 -->
+<section class="lvl" id="l1">
+  <p class="tag">Level 1</p><h2>Yaadon Ka Pitara 📷</h2><p class="sub">Kuch purani yaadein jo hamesha special rahengi...</p>
+  <div class="polrow" id="pol1"></div>
+  <button class="btn" data-go="2">Next Level ➜</button>
+</section>
+
+<!-- LEVEL 2 -->
+<section class="lvl" id="l2">
+  <p class="tag">Level 2</p><h2>Don Bhai Challenge 😂</h2><p class="sub">Thoda dimag lagao, thoda yaadein yaad karo...</p>
+  <div class="quiz"><div class="pic" id="qpic"></div>
+   <div class="qc" style="position:relative"><div class="note">Sahi jawab par next level unlock hoga! 😜</div>
+    <h3 id="qq"></h3><div id="qo"></div><p class="react" id="qr"></p></div></div>
+  <button class="btn" id="qn" disabled>Agla sawaal ➜</button>
+</section>
+
+<!-- LEVEL 3 -->
+<section class="lvl" id="l3">
+  <p class="tag">Level 3</p><h2>Unforgettable Moments</h2><p class="sub">Har ek photo ek kahani... aur har kahani me tum ❤️</p>
+  <div class="cw"><button class="ar l" id="pv" aria-label="Pichla">‹</button><div class="car" id="car"></div><button class="ar r" id="nx" aria-label="Agla">›</button></div>
+  <div class="dots" id="dots"></div>
+  <button class="btn" data-go="4">Next Level ➜</button>
+</section>
+
+<!-- LEVEL 4 -->
+<section class="lvl" id="l4">
+  <p class="tag">Level 4</p><h2 id="rt">22 Reasons ❤️</h2><p class="sub">Card pe tap karo, dekho tum kyun special ho...</p>
+  <p class="cnt" id="rcnt">0 / 22</p><div class="rg" id="rg"></div>
+  <button class="btn" data-go="5">Next Level ➜</button>
+</section>
+
+<!-- LEVEL 5 -->
+<section class="lvl" id="l5">
+  <p class="tag">Level 5</p><h2>Ek Chhota Sa Video / Message ▶️</h2><p class="sub">Click karke dekhna... kuch special baatein hamari taraf se ❤️</p>
+  <div class="vid" id="vid"></div>
+  <button class="btn" data-go="6">Last Surprise 🎁</button>
+</section>
+
+<!-- GIFT -->
+<section class="lvl" id="l6">
+  <div id="giftbox"><p class="hand" style="font-size:32px;margin:0">Ek gift tumhare liye hai...</p><button class="gift" id="gift" aria-label="Gift kholo">🎁</button><p class="sub">Khol ke dekho!</p></div>
+  <div id="reveal">
+   <h1 class="hb"><small>Happy Birthday</small><span id="nm"></span> 🎂</h1>
+   <div class="age" id="age"></div>
+   <div class="pol main-pic"><div class="im" style="aspect-ratio:1" id="fmain"></div><p>Level <span class="ag"></span> unlocked ✨</p></div>
+   <p class="msg">Tumhari life hamesha khushiyon, success aur achhe logon se bhari rahe. Hamesha muskurati raho, kyunki tumhari smile se sab kuch aur bright ho jaata hai! ❤️</p>
+   <div class="wishes" id="wishes"></div>
+   <div class="polrow" id="fpol" style="max-width:520px;margin:0 auto"></div>
+   <p class="from">With lots of love from<br>Chandan Kumar, Srashti Bisht &amp; Pawan Bisht 💗</p>
+   <button class="btn" id="again">Confetti phir se 🎊</button>
+  </div>
+</section>
+</main>
+<canvas id="cv"></canvas>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   ✏️  YAHAN APNI PHOTOS / VIDEO KE PATH DAALO
+   Khaali ("") chhodoge to dotted "Photo yahan" box dikhega.
+   Path example:  "photos/hero.jpg"   (html file ke saath photos folder rakho)
+   ═══════════════════════════════════════════════════════════ */
+const NAME       = "Don";          // ✏️ birthday wale/wali ka naam
+const BIRTH_YEAR = 2004;           // age = is saal - 2004
+const PHOTO = {
+  hero:   "",                      // 📸 pehle page ki badi photo
+  level1: [                        // 📸 Yaadon Ka Pitara (5 photos + caption)
+    ["", "Ye smile aisi hi rehna 💗"],
+    ["", "Pahadon wali girl 🌿"],
+    ["", "Chai + Talks = Best Time ☕"],
+    ["", "Candid is the best 😆"],
+    ["", "Mast moment ✨"]
+  ],
+  quiz:   "",                      // 📸 Don Bhai Challenge wali photo
+  moments:[                        // 📸 Unforgettable Moments (kitni bhi daalo)
+    ["", "Ye din kabhi nahi bhulunga 💗"],
+    ["", "Masti time 😜"],
+    ["", "Always the happiest girl ✨"],
+    ["", "Beautyyy 😍"],
+    ["", "Yaadgaar pal 📷"]
+  ],
+  video:  { poster:"", src:"" },   // 🎬 video file path (mp4) aur uska poster photo
+  final:  {
+    main:    "",                   // 📸 last page ki badi photo
+    chandan: "", srashti: "", pawan: ""   // 📸 teeno ki photo
+  }
+};
+
+const QUIZ = [
+ {q:"Q1. Hum sab me se sabse zyada tang kaun karta hai? 😅", o:["Chandan Kumar","Srashti Bisht","Pawan Bisht","Sabhi equally tang karte hain 🤣"], r:["Chandan: guilty! 😂","Srashti: bilkul sach! 🙈","Pawan: hmm, maan gaya 😎","Sahi pakda! Sab ek jaise hain 🤣"]},
+ {q:"Q2. Birthday party me sabse pehle kya hota hai?", o:["Cake kaatna 🎂","Photos 📸","Khana 🍕","Sab kuch ek saath! 🎉"], r:["Cake first, sahi baat! 🍰","Photos ke bina party adhoori 😄","Foodie alert! 🍕","Bilkul! Full masti 🎉"]},
+ {q:"Q3. Is saal ka sabse bada wish kya hona chahiye?", o:["Khushiyan ✨","Success 🚀","Dher saari trips 🏔️","Teeno! 😍"], r:["Aamin! ✨","Chha jaao! 🚀","Trip pakki! 🏔️","Sab kuch mile! 💗"]}
+];
+const REASONS = [["😂","Tum hamesha positive rehti ho"],["😊","Tumhari smile sab kuch better kar deti hai"],["👂","Tum sabki baat dhyan se sunti ho"],["💃","Tumhari masti alag hai"],["💪","Tum strong ho"],["🌟","Tum inspiration ho"],["🌸","Tumhari simplicity sabse best hai"],["🤗","Tum hamesha sabke liye sochti ho"],["😆","Tumhari hasi infectious hai"],["📞","Kisi bhi time call karo, tum ho"],["🎨","Tum creative ho"],["🥺","Tumhara dil bahut soft hai"],["🔥","Tum kabhi haar nahi maanti"],["🍕","Khane ki partner no. 1"],["📸","Camera ke saamne natural star"],["🤝","Tum loyal dost ho"],["🌈","Tumhare saath har din rangeen"],["🧠","Tumhari baatein dimag ghuma deti hain (good way me)"],["🎉","Party ki jaan ho"],["💬","Tumse baat karke mood fresh"],["🕊️","Tumhara dil saaf hai"],["💗","Tum jaisi ho, bas waisi hi best ho"]];
+const WISHES = [["Chandan Kumar","Happy Birthday! Ye naya level aur bhi epic ho. Hasti raho, tension sab fix ho jaye aur khushiyan hamesha aati rahein. 🎉"],["Srashti Bisht","Happy Birthday meri pyaari dost! Aise hi muskurati raho, saari wishes poori ho. Love you loads! 💖"],["Pawan Bisht","Happy Birthday! Life me success, masti aur dher saara pyaar mile. Party pakki! 🥳"]];
+
+/* ─────────────── code (isse chhedna zaruri nahi) ─────────────── */
+const $=id=>document.getElementById(id);
+const img=(s,a="")=>s?`<img class="ph" src="${s}" alt="${a}">`:`<div class="empty">📷<br>Photo yahan</div>`;
+const pol=([s,c])=>`<div class="pol"><div class="im">${img(s)}</div><p>${c}</p></div>`;
+const AGE=new Date().getFullYear()-BIRTH_YEAR;
+let cur=0;const LV=[...document.querySelectorAll('.lvl')];
+$('steps').innerHTML=[1,2,3,4,5].map(n=>`<span class="dot">${n}</span><span class="ln"></span>`).join('')+`<span class="dot">🎁</span>`;
+const dots=[...document.querySelectorAll('.dot')];
+function go(n){cur=n;LV.forEach((e,i)=>e.classList.toggle('on',i===n));
+ dots.forEach((d,i)=>{d.className='dot'+(i<n-1?' done':'')+(i===n-1?' on':'')});
+ $('back').style.visibility=n?'visible':'hidden';scrollTo(0,0);}
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+$('back').onclick=()=>go(cur-1);
+$('hero').innerHTML=img(PHOTO.hero,"photo");
+$('pol1').innerHTML=PHOTO.level1.map(pol).join('');
+$('qpic').innerHTML=img(PHOTO.quiz);
+$('car').innerHTML=PHOTO.moments.map(pol).join('');
+$('rt').textContent=AGE+" Reasons ❤️";
+/* quiz */
+let qi=0;
+function showQ(){const Q=QUIZ[qi];$('qq').textContent=Q.q;$('qr').textContent='';$('qn').disabled=true;
+ $('qn').textContent=qi===QUIZ.length-1?'Next Level ➜':'Agla sawaal ➜';
+ $('qo').innerHTML=Q.o.map((t,i)=>`<button class="opt" data-i="${i}"><b>${'ABCD'[i]}</b>${t}</button>`).join('');
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{document.querySelectorAll('.opt').forEach(x=>x.classList.remove('pick'));b.classList.add('pick');$('qr').textContent=Q.r[b.dataset.i];$('qn').disabled=false})}
+$('qn').onclick=()=>{if(qi<QUIZ.length-1){qi++;showQ()}else go(3)};showQ();
+/* carousel */
+const car=$('car');$('dots').innerHTML=PHOTO.moments.map(()=>'<i></i>').join('');
+const dd=[...$('dots').children];
+function upd(){const w=car.children[0].offsetWidth+18;const i=Math.min(dd.length-1,Math.round(car.scrollLeft/w));dd.forEach((d,k)=>d.classList.toggle('on',k===i))}
+car.onscroll=upd;setTimeout(upd,300);
+$('nx').onclick=()=>car.scrollBy({left:car.children[0].offsetWidth+18,behavior:'smooth'});
+$('pv').onclick=()=>car.scrollBy({left:-(car.children[0].offsetWidth+18),behavior:'smooth'});
+/* reasons */
+let ro=0;$('rg').innerHTML=REASONS.slice(0,AGE>0?REASONS.length:22).map(([e,t])=>`<button class="rc"><span class="e">${e}</span></button>`).join('');
+document.querySelectorAll('.rc').forEach((b,i)=>b.onclick=()=>{if(b.classList.contains('open'))return;b.classList.add('open');b.innerHTML=REASONS[i][1];ro++;$('rcnt').textContent=ro+' / '+REASONS.length});
+$('rcnt').textContent='0 / '+REASONS.length;
+/* video */
+const V=PHOTO.video;
+$('vid').innerHTML=V.src?`<video id="v" poster="${V.poster}" playsinline preload="metadata"></video><button class="play" id="pl" aria-label="Play">▶</button><span class="jf">Just for you ♡</span>`:`${img(V.poster)}<div class="jf">Video yahan aayega 🎬</div>`;
+if(V.src){const v=$('v');v.src=V.src;$('pl').onclick=()=>{v.controls=true;v.play();$('pl').style.display='none'}}
+/* final */
+$('nm').textContent=NAME;$('age').textContent=AGE+" saal ho gaye! 🎉";document.querySelectorAll('.ag').forEach(e=>e.textContent=AGE);
+$('fmain').innerHTML=img(PHOTO.final.main);
+$('wishes').innerHTML=WISHES.map(([n,t])=>`<div class="w"><b>${n}</b>${t}</div>`).join('');
+$('fpol').innerHTML=[[PHOTO.final.chandan,"Chandan Kumar"],[PHOTO.final.srashti,"Srashti Bisht"],[PHOTO.final.pawan,"Pawan Bisht"]].map(pol).join('');
+$('gift').onclick=()=>{$('giftbox').style.display='none';$('reveal').classList.add('on');boom()};
+$('again').onclick=boom;
+/* deco + confetti */
+$('deco').innerHTML=['💗','🌸','✨','🍃','💕','🌷','⭐','🎈'].map((e,i)=>`<span style="left:${(i*13+5)%95}%;top:${(i*29+8)%90}%;animation-delay:${i*.7}s">${e}</span>`).join('');
+const cv=$('cv'),x=cv.getContext('2d');let ps=[];
+function boom(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;cv.width=innerWidth;cv.height=innerHeight;
+ ps=Array.from({length:170},()=>({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.6,v:2+Math.random()*4,s:6+Math.random()*8,r:Math.random()*6,h:Math.random()<.35,c:['#d6293e','#ff7a93','#ffd166','#ffb3c1','#fff'][Math.random()*5|0]}));
+ (function f(){x.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.y+=p.v;p.r+=.08;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;
+ if(p.h){x.font=p.s*2+'px serif';x.fillText('♥',0,0)}else x.fillRect(0,0,p.s,p.s*.6);x.restore()});ps=ps.filter(p=>p.y<cv.height+30);if(ps.length)requestAnimationFrame(f)})()}
+go(0);
+</script></body></html>
