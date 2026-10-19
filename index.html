@@ -56,7 +56,8 @@ button:focus-visible{outline:3px solid #ffb3c1;outline-offset:2px}
 .opt b{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:12px;color:var(--red);flex:none}
 .opt:hover{background:#ffe0e8}.opt.pick{background:var(--red);color:#fff}.opt.pick b{color:var(--red)}
 .react{min-height:48px;font-family:var(--hand);font-size:24px;color:var(--red);margin:6px 0 0}
-.note{position:absolute;right:-4px;top:-14px;background:#ffd6df;font-family:var(--hand);font-size:17px;padding:6px 10px;transform:rotate(5deg);box-shadow:0 4px 10px #0002;max-width:130px;line-height:1.1}
+.note{position:absolute;right:-4px;top:-14px;background:#ffd6df;font-family:var(--hand);font-size:17px;padding:6px 10px;transform:rotate(5deg);box-shadow:0 4px 10px #0002;max-width:130px;line-height:1.1;transition:opacity .4s;z-index:3}
+.note.hide{opacity:0;pointer-events:none}
 @media(min-width:700px){.quiz{grid-template-columns:240px 1fr}}
 /* carousel */
 .car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 8vw 14px;scrollbar-width:none;margin:0 -18px}
@@ -184,7 +185,7 @@ const PHOTO = {
     ["img/7.jpeg", "Always the happiest girl ✨"],
     ["img/5.jpeg", "Beautyyy 😍"],
   ],
-  video:  { poster:"", src:"aaa.mp4" },   // 🎬 video file path (mp4) aur uska poster photo
+  video:  { poster:"", src:"img/aaa.mp4" },   // 🎬 video file path (mp4) aur uska poster photo
   final:  {
     main:    "1.jpeg",                   // 📸 last page ki badi photo
     chandan: "12.jpeg", srashti: "srashti.jpg", pawan: "10.jpeg"   // 📸 teeno ki photo
@@ -194,7 +195,12 @@ const PHOTO = {
 const QUIZ = [
  {q:"Q1. Hum sab me se sabse zyada tang kaun karta hai? 😅", o:["Chandan Kumar","Srashti Bisht","Pawan Bisht","Sabhi equally tang karte hain 🤣"], r:["Chandan: guilty! 😂","Srashti: bilkul sach! 🙈","Pawan: hmm, maan gaya 😎","Sahi pakda! Sab ek jaise hain 🤣"]},
  {q:"Q2. Birthday party me sabse pehle kya hota hai?", o:["Cake kaatna 🎂","Photos 📸","Khana 🍕","Sab kuch ek saath! 🎉"], r:["Cake first, sahi baat! 🍰","Photos ke bina party adhoori 😄","Foodie alert! 🍕","Bilkul! Full masti 🎉"]},
- {q:"Q3. Is saal ka sabse bada wish kya hona chahiye?", o:["Khushiyan ✨","Success 🚀","Dher saari trips 🏔️","Teeno! 😍"], r:["Aamin! ✨","Chha jaao! 🚀","Trip pakki! 🏔️","Sab kuch mile! 💗"]}
+ {q:"Q3. Is saal ka sabse bada wish kya hona chahiye?", o:["Khushiyan ✨","Success 🚀","Dher saari trips 🏔️","Teeno! 😍"], r:["Aamin! ✨","Chha jaao! 🚀","Trip pakki! 🏔️","Sab kuch mile! 💗"]},
+ {q:"Q4. Don ko gussa aaye to kya karna chahiye? 😤", o:["Bhaaag jaao! 🏃‍♂️","Chocolate de do 🍫","Sorry bol do 100 baar 🥺","Phone de do aur chup ho jaao 📱"], r:["Sabse safe option hai! 🏃‍♂️😂","Chocolate se koi bhi pighal jaaye! 🍫❤️","100 baar? Kam hai bhai 😭😂","Smartest answer! 📱🤣"]},
+ {q:"Q5. Don ki subah ki pehli zaroorat kya hai? ☀️", o:["Chai ☕","Phone check karna 📱","10 minute aur so jaana 😴","Mirror me apna chehra dekhna 🪞"], r:["Chai ke bina toh duniya adhoori hai! ☕😂","Pehle notification, phir duniya! 📱😆","Neend ka junoon! 😴🤣","Mirror wala narcissist! 🪞😂"]},
+ {q:"Q6. Agar Don ek superhero hoti toh kya power hoti? 🦸‍♀️", o:["Sabko hasaane ki power 😂","Unlimited shopping ka power 🛍️","Time travel - exams skip karo ⏰","Mind reading - sabke secrets jaano 🧠"], r:["Already hai ye power toh! 😂💗","Bank waale ro denge! 🛍️😭","Exam? Wo kya hota hai! ⏰🤣","Sabke secrets? Khatarnaak! 🧠😈"]},
+ {q:"Q7. Don ke bina group me kya hota? 😢", o:["Bore ho jaate sab 😐","Koi ladai nahi hoti 😇","Bakchodi ka level gir jaata 📉","Group hi nahi hota! 💔"], r:["Sach bol diya! 😐😂","Haha peaceful toh hota! 😇🤣","Bakchodi ka asli brand ambassador! 📉😆","Ye toh emotional kar diya! 💔❤️"]},
+ {q:"Q8. Don 50 saal ki hogi toh kya karegi? 👵", o:["Naatiyon ko bigaadegi 👶😂","Still selfie queen 🤳","Sabko daantegi - Don style 😤","Abhi bhi 25 ki feel karegi 💅"], r:["Bigaadna toh DNA me hai! 👶🤣","Selfie game never stops! 🤳😂","Daant toh abhi bhi khaate hain! 😤😆","Age is just a number! 💅🤣"]}
 ];
 const REASONS = [["😂","Tum hamesha positive rehti ho"],["😊","Tumhari smile sab kuch better kar deti hai"],["👂","Tum sabki baat dhyan se sunti ho"],["💃","Tumhari masti alag hai"],["💪","Tum strong ho"],["🌟","Tum inspiration ho"],["🌸","Tumhari simplicity sabse best hai"],["🤗","Tum hamesha sabke liye sochti ho"],["😆","Tumhari hasi infectious hai"],["📞","Kisi bhi time call karo, tum ho"],["🎨","Tum creative ho"],["🥺","Tumhara dil bahut soft hai"],["🔥","Tum kabhi haar nahi maanti"],["🍕","Khane ki partner no. 1"],["📸","Camera ke saamne natural star"],["🤝","Tum loyal dost ho"],["🌈","Tumhare saath har din rangeen"],["🧠","Tumhari baatein dimag ghuma deti hain (good way me)"],["🎉","Party ki jaan ho"],["💬","Tumse baat karke mood fresh"],["🕊️","Tumhara dil saaf hai"],["💗","Tum jaisi ho, bas waisi hi best ho"]];
 const WISHES = [["Chandan Kumar","Happy Birthday! 🎉 May your life be full of happiness, money, and people who tolerate your nonsense! 🤣💸"],["Srashti Bisht","Happy Birthday, buddhu! 🤣🎂 You’re not getting older, you’re just becoming a limited edition disaster! 😂❤️"],["Pawan Bisht","Happy Birthday, drama queen/king! 👑🎂 May your problems be small and your birthday treats be BIG! 😂🍕🥳"]];
@@ -221,6 +227,9 @@ $('rt').textContent=AGE+" Reasons ❤️";
 let qi=0;
 function showQ(){const Q=QUIZ[qi];$('qq').textContent=Q.q;$('qr').textContent='';$('qn').disabled=true;
  $('qn').textContent=qi===QUIZ.length-1?'Next Level ➜':'Agla sawaal ➜';
+ /* Hide note after first question */
+ const note=document.querySelector('.note');
+ if(note){if(qi>0)note.classList.add('hide');else note.classList.remove('hide');}
  $('qo').innerHTML=Q.o.map((t,i)=>`<button class="opt" data-i="${i}"><b>${'ABCD'[i]}</b>${t}</button>`).join('');
  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{document.querySelectorAll('.opt').forEach(x=>x.classList.remove('pick'));b.classList.add('pick');$('qr').textContent=Q.r[b.dataset.i];$('qn').disabled=false})}
 $('qn').onclick=()=>{if(qi<QUIZ.length-1){qi++;showQ()}else go(3)};showQ();
